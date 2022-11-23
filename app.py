@@ -1,50 +1,49 @@
-cpf = '069498484'
-n_digits = list(range(1,11,1))
-
-
-
-def getD1(cpf):
-    n_digits = list(range(1, 11, 1))
+nine_dig_cpf = '069498484'
+         
+def get10DigCPF(nine_dig_cpf):
+    n_digits = list(range(2, 11, 1))
+    n_digits.reverse()
     i = 0
     l = list()
 
-
-    for n in cpf:
+    for n in nine_dig_cpf:
         multiplied = int(n) * n_digits[i]
+        print(f'{n} x {n_digits[i]}')
         l.append(multiplied)
-        i =+ 1            
+        i += 1
+                        
     l = sum(l)
     r = l % 11
     if r == 0 or r == 1:
-        d1 = 0
+        tenth_digit = 0
     else: 
-        d1 = 11 - r
-    
-    cpf += str(d1)
+        tenth_digit = 11 - r
 
-    return(cpf)
+    ten_dig_cpf = nine_dig_cpf + str(tenth_digit)
+
+    return(ten_dig_cpf)
 
 
-def getD2(cpf):
+def get11DigCPF(ten_dig_cpf):
     n_digits = list(range(2, 12, 1))
     n_digits.reverse()
     i = 0
     l = list()
-    for n in cpf:
+    for n in ten_dig_cpf:
         multiplied = int(n) * n_digits[i]
-        i =+ 1
+        i += 1
         l.append(multiplied)
     l = sum(l)
     r = l % 11
-    print(r)
     if r == 0 or r == 1:
-        d2 = 0
+        eleventh_digit = 0
     else: 
-        d2 = 11 - r
+        eleventh_digit = 11 - r
 
-    cpf += d2
+    eleven_dig_cpf = ten_dig + str(eleventh_digit)
 
-    return(cpf)
+    return(eleven_dig_cpf)
 
-
-getD2(cpf=getD1)
+ten_dig = get10DigCPF(nine_dig_cpf)
+eleven_dig_cpf = get11DigCPF(ten_dig)
+print(eleven_dig_cpf)
