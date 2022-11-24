@@ -1,4 +1,4 @@
-nine_dig_cpf = '069498484'
+nine_dig_cpf = '065518624'
          
 def get10DigCPF(nine_dig_cpf):
     n_digits = list(range(2, 11, 1))
@@ -8,7 +8,6 @@ def get10DigCPF(nine_dig_cpf):
 
     for n in nine_dig_cpf:
         multiplied = int(n) * n_digits[i]
-        print(f'{n} x {n_digits[i]}')
         l.append(multiplied)
         i += 1
                         
