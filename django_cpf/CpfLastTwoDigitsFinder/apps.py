@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class CpfConfig(AppConfig):
+class CpflasttwodigitsfinderConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'cpf'
+    name = 'CpfLastTwoDigitsFinder'
