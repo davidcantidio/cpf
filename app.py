@@ -1,5 +1,16 @@
-nine_dig_cpf = '065518624'
-         
+import re
+
+
+def get9DigCPF():
+    nine_dig_cpf = input('Insira o CPF sem os dois dígitos verificadores finais: ')
+    if not re.match("^[0-9]*$", nine_dig_cpf):
+        print ("Erro! Insira apenas números!")
+        exit()
+    elif len(nine_dig_cpf) > 9:
+        print ("Error! Insira apenas os primeiros 9 dígitos do CPF!")
+        exit()
+    return nine_dig_cpf
+
 def get10DigCPF(nine_dig_cpf):
     n_digits = list(range(2, 11, 1))
     n_digits.reverse()
@@ -23,7 +34,7 @@ def get10DigCPF(nine_dig_cpf):
     return(ten_dig_cpf)
 
 
-def get11DigCPF(ten_dig_cpf):
+def get11DigCPF(ten_dig_cpf, nine_dig_cpf):
     n_digits = list(range(2, 12, 1))
     n_digits.reverse()
     i = 0
@@ -39,10 +50,10 @@ def get11DigCPF(ten_dig_cpf):
     else: 
         eleventh_digit = 11 - r
 
-    eleven_dig_cpf = ten_dig + str(eleventh_digit)
-
+    eleven_dig_cpf = f'CPF: {nine_dig_cpf}-{ten_dig[-1:]}{str(eleventh_digit)}'
     return(eleven_dig_cpf)
 
-ten_dig = get10DigCPF(nine_dig_cpf)
-eleven_dig_cpf = get11DigCPF(ten_dig)
+nine_dig = get9DigCPF()
+ten_dig = get10DigCPF(nine_dig)
+eleven_dig_cpf = get11DigCPF(ten_dig, nine_dig)
 print(eleven_dig_cpf)
