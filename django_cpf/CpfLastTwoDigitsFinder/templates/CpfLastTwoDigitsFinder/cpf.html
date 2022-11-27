@@ -1,0 +1,13 @@
+{%extends "CpfLastTwoDigitsFinder/base.html" %}
+{% block content%}
+    <div class="container">
+        <h1>Verificador dos dois último digitos do CPF</h1>
+        <div class="form">
+        <form action="search" method="post">
+            9 prmeiros dígitos do CPF: <input type="text" name="cpf" action="/cpf/">
+        <p id="last-digits">-{{last_two_digits}}  </p>
+        </div>
+
+    </form>
+    </div>
+{%endblock content%}

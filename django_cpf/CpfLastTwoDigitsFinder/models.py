@@ -4,7 +4,7 @@ from django.db import models
 
 
 class Cpf(models.Model):
-    nine_digit_cpf = models.IntegerField(max_length=9)
+    nine_digit_cpf = models.CharField(max_length=9)
     def __str__(self):
         return f"{self.nine_digit_cpf}"
     

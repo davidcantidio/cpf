@@ -7,7 +7,7 @@ def get9DigCPF():
         print ("Erro! Insira apenas números!")
         exit()
     elif len(nine_dig_cpf) > 9:
-        print ("Error! Insira apenas os primeiros 9 dígitos do CPF!")
+        print ("Erro! Insira apenas os primeiros 9 dígitos do CPF!")
         exit()
     return nine_dig_cpf
 
